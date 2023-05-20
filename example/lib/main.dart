@@ -4,14 +4,16 @@ import 'liquid_circular_progress_indicator_page.dart';
 import 'liquid_custom_progress_indicator_page.dart';
 import 'liquid_linear_progress_indicator_page.dart';
 
-void main() => runApp(MaterialApp(home: Example()));
+void main() => runApp(const MaterialApp(home: Example()));
 
 class Example extends StatelessWidget {
+  const Example({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Liquid Progress Indicator Examples"),
+        title: const Text("Liquid Progress Indicator Examples"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
@@ -19,30 +21,28 @@ class Example extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            FlatButton(
-              child: Text("Circular"),
-              color: Colors.grey[300],
+            TextButton(
+
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (_) => LiquidCircularProgressIndicatorPage(),
                 ),
               ),
+              child: const Text("Circular"),
             ),
-            FlatButton(
-              child: Text("Linear"),
-              color: Colors.grey[300],
+            TextButton(
+              child: const Text("Linear"),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => LiquidLinearProgressIndicatorPage(),
+                  builder: (_) => const LiquidLinearProgressIndicatorPage(),
                 ),
               ),
             ),
-            FlatButton(
-              child: Text("Custom"),
-              color: Colors.grey[300],
+            TextButton(
+              child: const Text("Custom"),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => LiquidCustomProgressIndicatorPage(),
+                  builder: (_) => const LiquidCustomProgressIndicatorPage(),
                 ),
               ),
             ),

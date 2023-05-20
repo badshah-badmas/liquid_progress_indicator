@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 
 class LiquidLinearProgressIndicatorPage extends StatelessWidget {
+  const LiquidLinearProgressIndicatorPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Liquid Linear Progress Indicators"),
+        title: const Text("Liquid Linear Progress Indicators"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -15,19 +17,19 @@ class LiquidLinearProgressIndicatorPage extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 35,
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: LiquidLinearProgressIndicator(
               backgroundColor: Colors.black,
-              valueColor: AlwaysStoppedAnimation(Colors.red),
+              valueColor: const AlwaysStoppedAnimation(Colors.red),
             ),
           ),
           Container(
             width: double.infinity,
             height: 35,
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: LiquidLinearProgressIndicator(
               backgroundColor: Colors.white,
-              valueColor: AlwaysStoppedAnimation(Colors.pink),
+              valueColor: const AlwaysStoppedAnimation(Colors.pink),
               borderColor: Colors.red,
               borderWidth: 5.0,
               direction: Axis.vertical,
@@ -36,13 +38,13 @@ class LiquidLinearProgressIndicatorPage extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 35,
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: LiquidLinearProgressIndicator(
               backgroundColor: Colors.white,
-              valueColor: AlwaysStoppedAnimation(Colors.grey),
+              valueColor: const AlwaysStoppedAnimation(Colors.grey),
               borderColor: Colors.blue,
               borderWidth: 5.0,
-              center: Text(
+              center: const Text(
                 "Loading...",
                 style: TextStyle(
                   fontSize: 12.0,
@@ -54,10 +56,10 @@ class LiquidLinearProgressIndicatorPage extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 35,
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: LiquidLinearProgressIndicator(
               backgroundColor: Colors.lightGreen,
-              valueColor: AlwaysStoppedAnimation(Colors.blueGrey),
+              valueColor: const AlwaysStoppedAnimation(Colors.blueGrey),
               direction: Axis.vertical,
             ),
           ),
@@ -76,14 +78,14 @@ class _AnimatedLiquidLinearProgressIndicator extends StatefulWidget {
 class _AnimatedLiquidLinearProgressIndicatorState
     extends State<_AnimatedLiquidLinearProgressIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
+ late AnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 10),
+      duration: const Duration(seconds: 10),
     );
 
     _animationController.addListener(() => setState(() {}));
@@ -103,15 +105,15 @@ class _AnimatedLiquidLinearProgressIndicatorState
       child: Container(
         width: double.infinity,
         height: 75.0,
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: LiquidLinearProgressIndicator(
           value: _animationController.value,
           backgroundColor: Colors.white,
-          valueColor: AlwaysStoppedAnimation(Colors.blue),
+          valueColor: const AlwaysStoppedAnimation(Colors.blue),
           borderRadius: 12.0,
           center: Text(
             "${percentage.toStringAsFixed(0)}%",
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.lightBlueAccent,
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
